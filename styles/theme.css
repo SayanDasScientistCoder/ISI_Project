@@ -1,0 +1,271 @@
+@keyframes nebula {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+body, .main, [data-testid="stAppViewContainer"] {
+    background-image: radial-gradient(circle at 20% 20%, #660340, transparent 50%),
+                      radial-gradient(circle at 80% 80%, #0958a7, transparent 50%),
+                      radial-gradient(circle at 20% 80%, #6c2dab, transparent 50%),
+                      radial-gradient(circle at 80% 20%, #977201, transparent 50%);
+    background-size: 200% 200%;
+    animation: nebula 10s ease-in-out infinite;
+    background-color: #0b0f1a;
+    color: #C5C6C7 !important;
+}
+
+[data-testid="stAppViewBlockContainer"] {
+    padding-top: 1.5rem !important;
+}
+
+
+
+/* ===============================
+      TYPOGRAPHY
+=================================*/
+h1, h2, h3, h4 {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+p, label, span, .stMarkdown, .css-1fv8s86, .css-183lzff {
+    color: #C5C6C7 !important;
+    font-size: 16px !important;
+}
+
+/* Subheaders */
+h2, h3 {
+    margin-top: 1rem !important;
+    margin-bottom: 0.6rem !important;
+}
+
+/* ===============================
+      BUTTONS
+=================================*/
+.stButton > button {
+    background-image: linear-gradient(135deg, #1260a094, #000000a2) !important;
+    color: white !important;
+    border-radius: 20px !important;
+    padding: 12px 22px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    border: none !important;
+    transition: 0.25s ease-in-out !important;
+    box-shadow: 0px 2px 8px rgba(18, 97, 160, 0.35) !important;
+}
+
+.stButton > button:hover {
+    background-image: linear-gradient(135deg, #1260a094, #000000a2) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0px 4px 20px 20px rgba(31, 111, 205, 0.45) !important;
+}
+
+.stDownloadButton > button {
+    background: linear-gradient(135deg, #1260a094, #000000a2) !important;
+    color: white !important;
+    border-radius: 20px !important;
+    padding: 12px 22px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    border: none !important;
+    transition: 0.25s ease-in-out !important;
+    box-shadow: 0px 2px 8px rgba(18, 97, 160, 0.35) !important;
+}
+
+.stForm button[kind="formSubmit"] {
+    background: linear-gradient(135deg, #1260a094, #000000a2) !important;
+    color: white !important;
+    border-radius: 20px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    font-size: 16px !important;
+    transition: 0.3s !important;
+}
+
+.stForm button[kind="formSubmit"]:hover {
+    background-image: linear-gradient(135deg, #1260a094, #000000a2);
+    transform: scale(1.03);
+}
+
+/* Hover effect identical to regular button */
+.stDownloadButton > button:hover {
+    background: linear-gradient(135deg, #1260a094, #000000a2) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0px 4px 20px 20px rgba(31, 111, 205, 0.45) !important;
+}
+
+/* Fix Streamlit's new button class */
+button[kind="secondary"], button[kind="primary"] {
+    background: linear-gradient(135deg, #1260a094, #000000a2);
+    border-radius: 20px !important;
+}
+
+/* ===============================
+      FILE UPLOADER
+=================================*/
+.stFileUploader {
+    background: #0F1117 !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+    border: 1px solid #1F2833 !important;
+    box-shadow: 0px 0px 10px rgba(102, 252, 241, 0.05);
+}
+
+.stFileUploader label {
+    font-weight: 600 !important;
+    color: #66FCF1 !important;
+    font-size: 17px !important;
+}
+
+/* Drag/drop area styling */
+[data-testid="stFileDropzone"] {
+    background-color: #14161D !important;
+    border: 1px dashed #66FCF1 !important;
+    border-radius: 10px !important;
+}
+[data-testid="stFileDropzone"]:hover {
+    border-color: #45E5D4 !important;
+}
+
+/* ===============================
+      IMAGE STYLING
+=================================*/
+img {
+    border-radius: 8px !important;
+}
+
+.stImage {
+    text-align: center !important;
+}
+
+.stImage > img {
+    box-shadow: 0px 0px 12px rgba(102, 252, 241, 0.08);
+    transition: 0.25s;
+}
+.stImage > img:hover {
+    transform: scale(1.01);
+}
+
+/* Caption */
+.stImageCaption {
+    color: #9AA0A6 !important;
+    font-style: italic !important;
+}
+
+/* ===============================
+      CARDS / SECTIONS
+=================================*/
+.nasa-card {
+    background-color: #0F1117 !important;
+    padding: 18px !important;
+    border-radius: 12px !important;
+    border: 1px solid #1F2833 !important;
+    box-shadow: 0px 0px 15px rgba(102, 252, 241, 0.12);
+    margin-bottom: 20px !important;
+    transition: 0.25s;
+}
+
+.nasa-card:hover {
+    box-shadow: 0px 0px 20px rgba(102, 252, 241, 0.25);
+    transform: translateY(-2px);
+}
+
+/* ===============================
+      DIVIDERS
+=================================*/
+hr {
+    border-top: 1px solid #1F2833 !important;
+}
+
+/* ===============================
+      HIDE SIDEBAR
+=================================*/
+[data-testid="stSidebar"],
+[data-testid="stSidebarNav"] {
+    display: none !important;
+}
+
+/* ===============================
+      SCROLLBAR (Custom Modern)
+=================================*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0C0E13;
+}
+::-webkit-scrollbar-thumb {
+    background: #1F2833;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2C3A48;
+}
+
+/* ===============================
+      GLASS BOX EFFECT
+=================================*/
+.glass-container {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    border-radius: 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    padding: 25px 30px !important;
+    margin-top: 20px !important;
+    margin-bottom: 25px !important;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Custom form styling inside glass container */
+.glass-form .stTextInput > div > div > input {
+    background-color: rgba(15, 17, 23, 0.7) !important;
+    color: #E0E0E0 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(31, 40, 51, 0.8) !important;
+    padding: 12px !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+}
+
+.glass-form .stTextInput > div > div > input:focus {
+    border-color: #66FCF1 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(102, 252, 241, 0.2) !important;
+}
+
+/* ===============================
+      INPUT FIELDS
+=================================*/
+.stTextInput > div > div > input,
+textarea {
+    background-color: #0F1117 !important;
+    color: #E0E0E0 !important;
+    border-radius: 8px !important;
+    border: 1px solid #1F2833 !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #66FCF1 !important;
+}
+
+/* ===============================
+      MESSAGES / WARNING BOXES
+=================================*/
+.stAlert {
+    border-radius: 10px !important;
+    padding: 15px !important;
+}
+
+img
+{
+    transition: 0.25s;
+}
+img:hover
+{
+    box-shadow: 0px 0px 20px 20px rgba(17, 245, 253, 0.507);
+}
