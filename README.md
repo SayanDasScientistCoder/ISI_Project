@@ -74,7 +74,7 @@ project_root
 |---- requirements.txt  
 |---- README.md  
 |---- .env               # Environment variables (not committed)  
-```text
+```
 
 ## 🔐 Authentication & Security
 
