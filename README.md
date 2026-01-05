@@ -25,7 +25,9 @@ The system is built as a **production-ready prototype**, suitable for academic e
 ## 🏗️ System Architecture (High Level)
 
 User
+
 └── Streamlit UI
+
 ├── Authentication Layer
 │ └── MongoDB Atlas
 │
