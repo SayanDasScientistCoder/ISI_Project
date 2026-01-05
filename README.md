@@ -24,53 +24,57 @@ The system is built as a **production-ready prototype**, suitable for academic e
 
 ## 🏗️ System Architecture (High Level)
 
-User  
-└── Streamlit UI  
-├── Authentication Layer  
-│ └── MongoDB Atlas  
-│  
-├── Upload Module  
-│  
-├── Inference Engine  
-│ ├── Model Loader  
-│ ├── Per-model Device Selector (CPU / GPU)  
-│ ├── Weighted Ensemble  
-│  
-├── Analytics Engine  
-│ ├── Area %  
-│ ├── Circularity  
-│ ├── Severity Classification  
-│  
-├── Visualization Layer  
-│ └── Heatmaps & Masks  
-│  
-└── Reporting Module  
-├── PDF Reports  
-├── CSV Summaries  
-└── ZIP Exports  
+```text
+User
+|---- Streamlit UI
+|---- Authentication Layer
+|     |---- MongoDB Atlas
+|
+|---- Upload Module
+|
+|---- Inference Engine
+|     |---- Model Loader
+|     |---- Per-model Device Selector (CPU / GPU)
+|     |---- Weighted Ensemble
+|
+|---- Analytics Engine
+|     |---- Area %
+|     |---- Circularity
+|     |---- Severity Classification
+|
+|---- Visualization Layer
+|     |---- Heatmaps & Masks
+|
+|---- Reporting Module
+|     |---- PDF Reports
+|     |---- CSV Summaries
+|     |---- ZIP Exports
+```
 
 ## 🗂️ Project Structure
 
-project_root/  
-│  
-├── app.py # Entry point and routing  
-├── config.py # Environment & app configuration  
-│  
-├── pages/  
-│ ├── 0_Login.py # Login & registration  
-│ ├── 1_Upload.py # Image upload page  
-│ ├── 2_Result.py # Inference, ensembling & analytics  
-│ ├── 3_Dashboard.py # User dashboard (MongoDB-backed)  
-│ └── ResetPassword.py # Password reset workflow  
-│  
-├── models/ # Pretrained segmentation models (.pt / .pth)  
-├── styles/  
-│ └── theme.css # UI styling  
-│ 
-├── requirements.txt  
-├── README.md  
-└── .env # Environment variables (not committed)  
----  
+```text
+project_root  
+|  
+|---- app.py            # Entry point and routing  
+|---- config.py         # Environment & app configuration  
+|  
+|---- pages  
+|     |---- 0_Login.py        # Login & registration  
+|     |---- 1_Upload.py       # Image upload page  
+|     |---- 2_Result.py       # Inference, ensembling & analytics  
+|     |---- 3_Dashboard.py    # User dashboard (MongoDB-backed)  
+|     |---- ResetPassword.py  # Password reset workflow  
+|  
+|---- models             # Pretrained segmentation models (.pt / .pth)  
+|  
+|---- styles  
+|     |---- theme.css         # UI styling  
+|  
+|---- requirements.txt  
+|---- README.md  
+|---- .env               # Environment variables (not committed)  
+```text
 
 ## 🔐 Authentication & Security
 
