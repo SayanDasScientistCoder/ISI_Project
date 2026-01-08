@@ -108,7 +108,12 @@ if selected == "Login":
 
             st.session_state.logged_in = True
             st.session_state.user = email
-            st.switch_page("pages/3_Dashboard.py")
+            user = users_collection.find_one({"email": email})
+
+            if not user.get("tnc_accepted", False):
+                st.switch_page("pages/Disclaimer.py")
+            else:
+                st.switch_page("pages/3_Dashboard.py")
         else:
             st.error("Invalid email or password")
 
@@ -161,6 +166,8 @@ elif selected == "Register":
                     "last_login": None,
                     "total_uploads": 0,
                     "total_predictions": 0,
-                    "account_type": "Free"
+                    "account_type": "Free",
+                    "tnc_accepted": False   
                 })
+
                 st.success("Account created! You may now log in.")

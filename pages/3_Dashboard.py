@@ -20,6 +20,10 @@ if not user:
     st.error("User record not found in database.")
     st.stop()
 
+if not user.get("tnc_accepted", False):
+    st.switch_page("pages/Disclaimer.py")
+    st.stop()
+
 # ------------------ EXTRACT REAL USER DATA ------------------
 user_email = user["email"]
 account_type = user.get("account_type", "Free")

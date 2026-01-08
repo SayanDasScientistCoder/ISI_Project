@@ -1,5 +1,6 @@
 import streamlit as st
-from config import APP_NAME
+from config import APP_NAME,MONGO_URI
+from pymongo import MongoClient
 
 st.set_page_config(
     page_title=APP_NAME,
@@ -15,7 +16,16 @@ if "reset_token" in query_params:
     st.stop()
 
 # ------------------ AUTH GATE ------------------
+client = MongoClient(MONGO_URI)
+db = client["auth_db"]
+users_collection = db["users"]
+
 if not st.session_state.get("logged_in", False):
     st.switch_page("pages/0_Login.py")
 else:
-    st.switch_page("pages/3_Dashboard.py")
+    user = users_collection.find_one({"email": st.session_state.user})
+    
+    if not user.get("tnc_accepted", False):
+        st.switch_page("pages/Disclaimer.py")
+    else:
+        st.switch_page("pages/3_Dashboard.py")

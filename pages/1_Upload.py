@@ -1,8 +1,23 @@
 import streamlit as st
 from PIL import Image
+from pymongo import MongoClient
+from config import MONGO_URI
 
 if not st.session_state.get("logged_in", False):
     st.switch_page("pages/0_Login.py")
+    st.stop()
+
+client = MongoClient(MONGO_URI)
+db = client["auth_db"]
+users_collection = db["users"]
+
+user = users_collection.find_one({"email": st.session_state.user})
+if not user:
+    st.error("User record not found in database.")
+    st.stop()
+
+if not user.get("tnc_accepted", False):
+    st.switch_page("pages/Disclaimer.py")
     st.stop()
 
 # ---------------- Page + theme ----------------
